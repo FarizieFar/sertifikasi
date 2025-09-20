@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tambah Arsip</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <!-- Import font dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif; /* Terapkan font ke seluruh body */
+    }
+    h1 {
+      font-weight: 600;
+      color: #0d6efd; /* Biru ala Bootstrap */
+    }
+
+    h3 {
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 15px;
+      color: #555;
+    }
+  </style>
+</head>
+<body class="container mt-4">
+  <h1>Tambah Arsip Surat</h1>
+  <form id="form">
+    <div class="mb-3">
+      <label>Judul</label>
+      <input name="title" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Kategori</label>
+      <select name="category_id" class="form-control" id="catSelect"></select>
+    </div>
+    <div class="mb-3">
+      <label>Deskripsi</label>
+      <textarea name="description" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+      <label>File PDF</label>
+      <input type="file" name="file" accept="application/pdf" class="form-control" required>
+    </div>
+    <a href="index.html" class="btn btn-secondary">Kembali</a>
+    <button class="btn btn-primary">Simpan</button>
+  </form>
+
+  <script>
+    async function loadCategories(){
+      let res = await fetch('/api/categories');
+      let cats = await res.json();
+      document.getElementById('catSelect').innerHTML = cats.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+    }
+    loadCategories();
+
+    document.getElementById('form').addEventListener('submit', async e=>{
+      e.preventDefault();
+      let formData = new FormData(e.target);
+      let res = await fetch('/api/archives',{method:'POST', body: formData});
+      if(res.ok){
+        alert("Data berhasil disimpan");
+        location.href="index.html";
+      } else {
+        alert("Gagal menyimpan");
+      }
+    });
+  </script>
+</body>
+</html>
