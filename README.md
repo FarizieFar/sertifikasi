@@ -1,74 +1,71 @@
-📄 Arsip Surat Digital
-🎯 Tujuan
+````markdown
+# 📄 Arsip Surat Digital
 
-Aplikasi ini dibuat untuk mempermudah pengarsipan surat secara digital. Dengan aplikasi ini, pengguna dapat mengunggah surat (dalam format PDF), mengelompokkan berdasarkan kategori, mencari, serta mengelola arsip dengan lebih efisien.
+## 🎯 Tujuan
+Aplikasi ini dibuat untuk mempermudah pengarsipan surat secara digital. Dengan aplikasi ini, pengguna dapat mengunggah surat (format PDF), mengelompokkan berdasarkan kategori, mencari, serta mengelola arsip dengan lebih efisien.
 
-✨ Fitur
+## ✨ Fitur
+- Upload surat dalam format **PDF**  
+- Kategori surat (misalnya: Undangan, Pengumuman, Laporan, dll)  
+- Pencarian surat berdasarkan judul atau kategori  
+- Tabel daftar arsip surat  
+- Unduh / buka surat langsung dari aplikasi  
+- Database untuk menyimpan metadata surat (judul, kategori, deskripsi, path file)  
 
-Upload surat dalam format PDF
+## ⚙️ Teknologi
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap  
+- **Backend**: Node.js + Express  
+- **Database**: SQLite (dapat dikonversi ke MySQL)  
 
-Kategori surat (misalnya: Undangan, Pengumuman, Laporan, dll)
+## 🚀 Cara Menjalankan
+1. Clone repository:
+   ```bash
+   git clone https://github.com/FarizieFar/sertifikasi
+   cd nama-repo
+````
 
-Pencarian surat berdasarkan judul atau kategori
+2. Install dependencies:
 
-Tabel daftar arsip surat
+   ```bash
+   npm install
+   ```
+3. Jalankan server:
 
-Unduh / buka surat langsung dari aplikasi
+   ```bash
+   node server.js
+   ```
+4. Buka aplikasi di browser:
 
-Database untuk menyimpan metadata surat (judul, kategori, deskripsi, path file)
+   ```
+   http://localhost:3000
+   ```
 
-⚙️ Teknologi
+## 🗄️ Database
 
-Frontend: HTML, CSS, JavaScript, Bootstrap
+* File database SQLite ada di folder:
 
-Backend: Node.js + Express
+  ```
+  /db/arsip.sqlite
+  ```
+* Jika ingin menggunakan MySQL, silakan import file `database.sql` yang sudah disediakan.
 
-Database: SQLite (bisa dikonversi ke MySQL)
+## 📷 Screenshot
 
-🚀 Cara Menjalankan
-
-Clone repository:
-
-git clone https://github.com/username/nama-repo.git
-cd nama-repo
-
-
-Install dependencies:
-
-npm install
-
-
-Jalankan server:
-
-node server.js
-
-
-Akses aplikasi melalui browser:
-
-http://localhost:3000
-
-🗄️ Database
-
-File database SQLite ada di folder:
-
-/db/arsip.sqlite
-
-
-Jika ingin menggunakan MySQL, silakan import file database.sql yang sudah disediakan.
-
-📷 Screenshot
+<img width="1468" height="830" alt="image" src="https://github.com/user-attachments/assets/ce3cd5a3-531a-4ab1-b52a-26a8feb4eaf3" />
 
 
-(ganti dengan screenshot hasil aplikasi kamu)
+## 📚 Dokumentasi
 
-📚 Dokumentasi
+Dokumentasi lengkap tersedia pada file **Dokumentasi.pdf** di repo ini.
 
-Dokumentasi lengkap tersedia pada file Dokumentasi.pdf di repo ini.
+## 👤 Pengembang
 
-👤 Pengembang
+* Nama: Mohammad Alfarizi Abdullah
+* NIM: 2141720142
+* Prodi: D4 Teknik Informatika – Politeknik Negeri Malang
 
-Nama: Mohammad Alfarizi Abdullah
+```
 
-NIM: 2141720XXX
 
-Prodi: D4 Teknik Informatika – Politeknik Negeri Malang
+
+```
